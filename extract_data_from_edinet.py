@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[15]:
-
-
 import requests
 import re
 import edinet
@@ -21,8 +18,6 @@ for page in range(1, 5):
     list_tosho1.extend(m)
     print(m)
 
-
-# In[18]:
 
 
 #日付でfor文を回すための関数 https://qiita.com/ground0state/items/508e479335d82728ef91
@@ -55,9 +50,7 @@ for key, value in reports.items():
     _key = key.replace("株式会社","")
     if _key in list_tosho1:
         tosho1_edinet[key] = value
-        
-#edinet-parserを試す前に作ったもので、reで無理矢理探していました。
-#以下のコードはxbrlファイルをダウンロードしていないのでエラーになります。
+
 
 n_employee = {}
 
@@ -72,9 +65,6 @@ for company in tosho1_edinet:
         except AttributeError:
             print(f"Not found employee in {company}/{year}/{doc}")
             n_employee[company] = {year:None}
-
-
-# In[ ]:
 
 
 
